@@ -1,0 +1,122 @@
+@import "../../helpers/variables.scss";
+@import "../../helpers/mixins.scss";
+
+.who {
+  &--header {
+    display: grid;
+    @include grid-cols-12;
+    row-gap: 1.25rem;
+    margin-bottom: 2.5rem;
+
+    @media screen and (min-width: $breakpoint-lg) {
+        margin-bottom: 0;
+    }
+
+    &--img {
+      @include col-span-12;
+      background-image: url(../../library/images/v2004_109.png);
+      height: 21.875rem;
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: cover;
+
+      @media screen and (min-width: $breakpoint-lg) {
+        @include col-span-6;
+        height: 33.25rem;
+      }
+      @media screen and (min-width: $breakpoint-2xl) {
+        height: 43.75rem;
+      }
+    }
+
+    &--content {
+      @include col-span-12;
+      @media screen and (min-width: $breakpoint-lg) {
+        @include col-span-6;
+        display: grid;
+        @include grid-cols-6;
+        row-gap: 1.25rem;
+      }
+
+      &--texts {
+        @include col-span-5;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.25rem;
+        padding-left: 2.5rem;
+        justify-content: center;
+
+        .title {
+          text-transform: uppercase;
+          font-size: 1.25rem;
+          font-weight: 900;
+
+          @media screen and (min-width: $breakpoint-lg) {
+            font-size: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  &--lists {
+    background-color: $fColor;
+    padding: 40px 0;
+
+    @media screen and (min-width: $breakpoint-lg) {
+        padding-top: 9.375rem;
+        padding-bottom: 6.25rem;
+        margin-top: -5.125rem;
+    }
+
+    &--container {
+      @include col-span-12;
+      display: grid;
+      align-items: center;
+      @include grid-cols-1;
+      row-gap: 1.25rem;
+      color: $white;
+
+      @media screen and (min-width: $breakpoint-lg) {
+        @include grid-cols-3;
+        column-gap: 2.5rem;
+        @include col-span-10;
+        @include col-start-2;
+      }
+
+      @media screen and (min-width: $breakpoint-2xl) {
+        column-gap: 4.375rem;
+      }
+
+      &--list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 1.25rem;
+
+        .image {
+          width: 3.75rem;
+          object-fit: contain;
+          margin-bottom: 1.625rem;
+        }
+
+        .title {
+          font-weight: 900;
+          text-transform: uppercase;
+          font-size: 1.125rem;
+          text-align: center;
+          margin-bottom: 0.625rem;
+
+          @media screen and (min-width: $breakpoint-lg) {
+            font-size: 1.25rem;
+          }
+        }
+
+        .desc {
+          line-height: 1.25rem;
+        }
+      }
+    }
+  }
+}

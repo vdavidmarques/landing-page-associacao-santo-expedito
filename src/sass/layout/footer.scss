@@ -1,0 +1,166 @@
+@import "../helpers/variables.scss";
+@import "../helpers/mixins.scss";
+
+.footer {
+  margin-top: 5rem;
+  color: $white;
+
+  @media screen and (min-width: $breakpoint-lg) {
+    margin-top: 10rem;
+  }
+
+  &--header {
+    display: grid;
+    @include grid-cols-12;
+    row-gap: 1.25rem;
+    margin-bottom: 2.5rem;
+
+    @media screen and (min-width: $breakpoint-lg) {
+      margin-bottom: 0;
+    }
+
+    &--img {
+      @include col-span-12;
+      background-image: url(../../library/images/v2004_245.png);
+      height: 21.875rem;
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: cover;
+
+      @media screen and (min-width: $breakpoint-lg) {
+        @include col-span-6;
+        height: 33.25rem;
+      }
+      @media screen and (min-width: $breakpoint-2xl) {
+        height: 43.75rem;
+      }
+    }
+
+    &--content {
+      @include col-span-12;
+
+      @media screen and (min-width: $breakpoint-lg) {
+        @include col-span-6;
+        @include col-start-8;
+        display: grid;
+        @include grid-cols-6;
+        row-gap: 1.25rem;
+      }
+
+      &--texts {
+        @include col-span-5;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.25rem;
+        padding-left: 2.5rem;
+        justify-content: center;
+
+        .desc{
+          font-size: 1.25rem;
+
+          @media screen and (min-width: $breakpoint-lg) {
+            font-size: 1.875rem;
+          }
+        }
+      }
+    }
+  }
+
+  &--lists {
+    background-color: $fColor;
+    display: grid;
+    @include grid-cols-12;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5rem;
+    row-gap: 5rem;
+    overflow: hidden;
+    padding: 2.5rem;    
+
+    @media screen and (min-width: $breakpoint-lg) {
+      padding-top: 9.375rem;
+      padding-bottom: 0;
+      margin-top: -5.125rem;
+    }
+
+    &--img{
+      @include col-span-12;
+      margin-left: auto;
+      margin-right: auto;
+      @media screen and (min-width: $breakpoint-lg) {
+        @include col-span-5;
+      }
+
+      .santo{
+        transform: rotateY(180deg);
+        width: 21.875rem;
+        max-height: 28.125rem;
+        object-fit: contain;
+        
+        @media screen and (min-width: $breakpoint-lg) {
+          width: 100%;
+          max-height: 39.375rem;
+          object-fit: cover;
+        }
+      }
+    }
+
+    &--contact{
+      @include col-span-12;
+      @media screen and (min-width: $breakpoint-lg) {
+        @include col-span-7;
+      }
+
+      .list{
+        width: 25rem;
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+
+        @media screen and (min-width: $breakpoint-md) {
+          width: 43.75rem;
+          row-gap: 1.25rem;
+          display: grid;
+          @include grid-cols-2;
+        }
+        
+        @media screen and (min-width: $breakpoint-lg) {
+          @include grid-cols-1;
+          @include grid-cols-2;
+        }
+
+        .icon{
+          width: 3.75rem;
+          height: 3.75rem;
+          display: flex;
+          align-items: center;
+          padding-left: 5rem;
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+          font-size: 1.125rem;
+        }
+
+        .instagram{
+          background-image: url('../../library/icons/instagram.svg');
+        }
+
+        .linkedin{
+          background-image: url('../../library/icons/linkedin.svg');
+        }
+
+        .email{
+          background-image: url('../../library/icons/email.svg');
+        }
+
+        .cnpj{
+          background-image: url('../../library/icons/email.svg');
+        }
+      }
+    }
+  }
+}
+
+
+

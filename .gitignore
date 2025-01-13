@@ -1,0 +1,8 @@
+node_modules
+library/css/
+library/js/
+vendor/
+.vscode/settings.json
+package-lock.json
+composer.json
+composer.lock

@@ -1,0 +1,153 @@
+@import "../helpers/variables.scss";
+@import "../helpers/mixins.scss";
+
+.header{
+  
+  @media screen and (min-width: $breakpoint-lg) {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
+
+  &--top{
+    background-color: $fColor; 
+    height: 1.875rem;
+  }
+
+  &--content {
+    background-color: $gray;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+    &--logo a{
+      color: $black;
+      font-weight: 900;
+      font-size: 1.5625rem;
+      line-height: 0;
+
+      strong{
+        color: $fColor;
+      }
+    }
+
+    &--menu{
+      display: none;
+      @media screen and (min-width: $breakpoint-lg) {
+        display: block;
+      }
+
+      nav .main-menu{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.875rem;
+
+        @media screen and (min-width: $breakpoint-lg) {
+          flex-direction: row;
+          column-gap: 1.25rem;
+        }
+
+        a{
+          color: $black;
+          font-weight: 700;
+          text-transform: uppercase;
+          font-size: 16px;
+          line-height: 1.25rem;
+          @include transition-colors;
+
+          &:hover{
+            font-weight: 900;
+            color: $fColor;
+          }
+        }        
+      }
+    }
+
+    .open-menu-mobile .bg-menu-mobile {
+      background: url("../../library/icons/menu-icon.svg");
+      width: auto;
+      height: 2.5rem;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      overflow: hidden;
+      padding-left: 1.5rem;
+      text-indent: -624.9375rem;
+      border: none;
+    
+      @media screen and (min-width: $breakpoint-xl) {
+        display: none;
+      }
+    }    
+
+    &--button{
+      background-color: $fColor;
+      color: $white;
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 1.25rem;
+    }
+
+    .button{
+      display: none;
+      @media screen and (min-width: $breakpoint-lg) {
+        display: block;
+      }
+    }
+  }
+
+  &--bar{
+    display: grid;
+    @include grid-cols-12;
+    
+    span{
+      height: 0.9375rem;
+      @include col-span-10;
+      @include col-start-2;
+      background-color: $fColor; 
+    }
+  }
+
+  .bg-close-menu-mobile {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    padding-left: 1.5rem;
+    text-indent: -624.9375rem;
+    border: none;
+    position: absolute;
+    top: 1.75rem;
+    right: 1rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    background: url("../../library/icons/close-menu-icon.svg");
+
+    @media screen and (min-width: $breakpoint-lg) {
+      display: none;
+    }
+  }
+
+  .open-menu-mobile{
+    @media screen and (min-width: $breakpoint-xl) {
+      display: none;
+    }
+  }
+
+  .header--content--menu.openned{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background-color: $white;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 2.5rem 2.5rem 2.5rem 1.5rem;
+    z-index: 30;
+  }
+}
