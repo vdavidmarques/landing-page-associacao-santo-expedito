@@ -54,6 +54,7 @@
         row-gap: 1.25rem;
         padding-left: 2.5rem;
         justify-content: center;
+        color: $black;
 
         .desc{
           font-size: 1.25rem;
@@ -117,10 +118,10 @@
         flex-direction: column;
         margin-left: auto;
         margin-right: auto;
+        row-gap: 1.25rem;
 
         @media screen and (min-width: $breakpoint-md) {
           width: 43.75rem;
-          row-gap: 1.25rem;
           display: grid;
           @include grid-cols-2;
         }
